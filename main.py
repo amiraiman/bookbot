@@ -1,8 +1,13 @@
 from stats import get_num_words
+import sys
 
 
 def main():
-    book_path = "books/frankenstein.txt"
+    if len(sys.argv) < 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+
+    book_path = sys.argv[1]
     book_text = get_text(book_path)
     total = get_num_words(book_text)
     freq = get_character_frequency(book_text)
