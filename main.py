@@ -1,10 +1,10 @@
-from re import escape
+from stats import get_num_words
 
 
 def main():
     book_path = "books/frankenstein.txt"
     book_text = get_text(book_path)
-    total = count(book_text)
+    total = get_num_words(book_text)
     freq = get_character_frequency(book_text)
     report(book_path, total, freq)
 
@@ -40,10 +40,6 @@ def get_character_frequency(text):
 def get_text(path):
     with open(path) as f:
         return f.read()
-
-
-def count(text):
-    return len(text.split())
 
 
 if __name__ == "__main__":
