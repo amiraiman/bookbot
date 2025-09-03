@@ -21,11 +21,7 @@ def report(path, count, freq):
     for word in freq:
         escaped_word = word.encode("unicode_escape").decode("utf-8")
         total = freq[word]
-        times = "times"
-        if total == 1:
-            times = "time"
-
-        print(f"The '{escaped_word}' character was found {total} {times}")
+        print(f"{escaped_word}: {total}")
 
     print("--- End report ---")
 
